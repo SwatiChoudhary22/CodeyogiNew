@@ -2,11 +2,9 @@ import { FC, memo, InputHTMLAttributes, LabelHTMLAttributes } from "react";
 import cn from "classnames";
 
 type InputProps = {
-  children: React.ReactNode;
   error?: string;
   form?: string | undefined;
   htmlFor?: string | undefined;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 } & InputHTMLAttributes<HTMLInputElement> &
   LabelHTMLAttributes<HTMLLabelElement>;
 
@@ -18,20 +16,20 @@ const Input: FC<InputProps> = ({
   disabled,
   value,
   children,
-  handleChange,
+  onChange,
   onBlur,
   ...rest
 }) => {
   return (
     <div>
-      <div className=" max-w-full  items-center grid grid-cols-4  ">
+      <div className="grid items-center max-w-full grid-cols-4 ">
         <label>{children}</label>
         <input
           {...rest}
           type={type || "text"}
           id={id}
           name={name}
-          onChange={handleChange}
+          onChange={onChange}
           onBlur={onBlur}
           disabled={disabled}
           className={cn(

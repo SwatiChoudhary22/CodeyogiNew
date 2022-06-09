@@ -6,7 +6,7 @@ type H3Props = {
 const H3: FC<H3Props> = ({ children }) => {
   return (
     <>
-      <h3 className="text-white md:text-base text-sm">{children}</h3>
+      <h3 className="text-sm text-cyan-800 md:text-base">{children}</h3>
     </>
   );
 };

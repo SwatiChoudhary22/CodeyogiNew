@@ -1,20 +1,45 @@
-import { FC, memo } from "react";
-import { Link } from "react-router-dom";
-import H1 from "../H1";
+import { FC, memo, useEffect, useState } from "react";
+import { getAssignments } from "../../Api";
+import CardOfAssignment from "./CardOfAssignment";
+import H2 from "../H2";
 import PageLayout from "../PageLayout";
-type AsignmentsProps = {};
+import { Assignment } from "../../Modals/Assignment";
+type AssignmentsProps = {
+  assignment: Assignment;
+};
 
-const Asignments: FC<AsignmentsProps> = (props) => {
+const Assignments: FC<AssignmentsProps> = ({ assignment }) => {
+  const [assignments, setAssignments] = useState<Assignment[]>([]);
+
+  useEffect(() => {
+    const promise = getAssignments();
+    promise.then((response) => {
+      setAssignments(response.data);
+      localStorage.setItem("assignments", JSON.stringify(response.data));
+    });
+  }, []);
   return (
-    <div className="flex-1 h-screen p-3">
-      <H1>Assignments </H1>
-      <PageLayout>
-        <div className="h-full px-16 py-10 mx-5 rounded-md "></div>
-      </PageLayout>
+    <div className="flex-1 h-scren bg-cyan-50">
+      <div className="flex justify-end p-1 md:p-3"></div>
+      <div className="flex flex-col items-center justify-center px-4 pt-5 md:px-16 md:pt-10">
+        <div className="flex justify-start text-cyan-900">
+          <H2>Assignment List</H2>
+        </div>
+
+        <PageLayout>
+          <div className="flex flex-col items-center justify-center space-y-5">
+            {assignments.map((a) => {
+              return (
+                <CardOfAssignment assignments={a} key={a.id}></CardOfAssignment>
+              );
+            })}
+          </div>
+        </PageLayout>
+      </div>
     </div>
   );
 };
 
-Asignments.defaultProps = {};
+Assignments.defaultProps = {};
 
-export default memo(Asignments);
+export default memo(Assignments);

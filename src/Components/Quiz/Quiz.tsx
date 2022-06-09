@@ -5,12 +5,12 @@ type QuizProps = {};
 
 const Quiz: FC<QuizProps> = (props) => {
   return (
-    <>
+    <div className="bg-cyan-50">
       <Header></Header>
-      <div className="flex justify-center items-center text-cyan-800 h-screen">
+      <div className="flex items-center justify-center h-screen text-cyan-800">
         No active Questions
       </div>
-    </>
+    </div>
   );
 };
 

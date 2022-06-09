@@ -6,7 +6,7 @@ type H1Props = {
 const H1: FC<H1Props> = ({ children }) => {
   return (
     <>
-      <h1 className="text-xl md:text-2xl text-cyan-700">{children}</h1>
+      <h1 className="text-xl md:text-2xl text-cyan-500">{children}</h1>
     </>
   );
 };

@@ -6,7 +6,9 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import PageLayout from "../PageLayout";
 import H1 from "../H1";
-type ProfileProps = {};
+type ProfileProps = {
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+};
 
 const initialValues = {
   firstName: "",
@@ -41,7 +43,7 @@ const validationSchema = Yup.object().shape({
   DOB: Yup.string().required("Required"),
 });
 
-const Profile: FC<ProfileProps> = () => {
+const Profile: FC<ProfileProps> = ({ onClick }) => {
   return (
     <div className="flex-1 p-5 bg-gray-100">
       <PageLayout>
@@ -54,7 +56,7 @@ const Profile: FC<ProfileProps> = () => {
         >
           <div className="h-full px-16 py-10 mx-5 rounded-md ">
             <Form>
-              <div className="space-y-6 text-cyan-800">
+              <div className="space-y-6 text-white">
                 <div className="grid items-center max-w-full grid-cols-4 ">
                   <label htmlFor="firstName">
                     First Name <span className="text-red-600 ">*</span>
@@ -154,7 +156,9 @@ const Profile: FC<ProfileProps> = () => {
                 <hr className="w-full"></hr>
               </div>
               <div className="pt-5"></div>
-              <Button type="submit">Update</Button>
+              <Button onClick={onSubmit} type="submit">
+                Update
+              </Button>
             </Form>
           </div>
         </Formik>

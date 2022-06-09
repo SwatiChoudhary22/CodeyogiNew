@@ -5,7 +5,7 @@ type PageLayoutProps = {
 
 const PageLayout: FC<PageLayoutProps> = (props) => {
   return (
-    <div className="w-full p-10 py-16 mt-10 bg-gray-300 rounded-md ">
+    <div className="w-full p-10 py-16 bg-gray-500 rounded-md ">
       {props.children}
     </div>
   );
