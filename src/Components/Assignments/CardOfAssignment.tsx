@@ -63,11 +63,11 @@ const CardOfAssignment: FC<CardOfAssignmentProps> = ({ assignments }) => {
           </div>
           <div className="flex items-center text-sm underline text-cyan-900 underline-offset-2">
             <Icons imageUrl="https://icon-library.com/images/download-icon-white/download-icon-white-21.jpg"></Icons>
-            <Button>
+            <button>
               <a className="" href="https://play.tailwindcss.com/">
                 See Your Submission
               </a>
-            </Button>
+            </button>
           </div>
         </div>
       </div>
