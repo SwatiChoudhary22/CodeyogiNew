@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { Assignment } from "../Modals/Assignment";
 type SubmitProps = {
   assignment?: Assignment;
-  onClick: () => void;
+  onClick?: () => void;
   children?: React.ReactNode;
 };
 
@@ -21,7 +21,7 @@ const Submit: FC<SubmitProps> = ({ assignment, onClick }) => {
   const [urlError, setUrlError] = React.useState("");
   const submitAssignmet = () => {
     axios.put(
-      ` https://api.codeyogi.io/assignment/${assignment.id}/submit`,
+      ` https://api.codeyogi.io/assignment/${assignment?.id}/submit`,
       {
         submissionLink: submissionLink,
       },

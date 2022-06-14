@@ -4,7 +4,6 @@ import NavBar from "./NavBar";
 import Sidebar from "./Sidebar/Sidebar";
 type MainPageLayoutProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  handleClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 const MainPageLayout: FC<MainPageLayoutProps> = ({ onClick }) => {

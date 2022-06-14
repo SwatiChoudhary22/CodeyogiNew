@@ -6,12 +6,13 @@ import Icons from "../Icons";
 import PageLayOut from "../PageLayout";
 import Submit from "../Submit";
 import { Assignment } from "../../Modals/Assignment";
-import { getAssignmentsDetails } from "../../Api";
+import { getAssignments } from "../../Api";
 type AssignmentDetailsProps = {
-  assignment: Assignment;
+  assignment?: Assignment;
+  id: number;
 };
 
-const AssignmentDetails: FC<AssignmentDetailsProps> = ({ assignment }) => {
+const AssignmentDetails: FC<AssignmentDetailsProps> = () => {
   const data = useParams();
   const [assignmentsDetails, setAssignmentsDetails] = React.useState<
     Assignment[]
@@ -26,10 +27,10 @@ const AssignmentDetails: FC<AssignmentDetailsProps> = ({ assignment }) => {
   };
 
   useEffect(() => {
-    const promise = getAssignmentsDetails();
-    promise.then((response) => {
-      setAssignmentsDetails(response.data);
-      localStorage.setItem("assignmentsDetails", JSON.stringify(response.data));
+    const promise = getAssignments();
+    promise.then((data) => {
+      setAssignmentsDetails(data);
+      localStorage.setItem("assignmentsDetails", JSON.stringify(data));
     });
   }, []);
 
@@ -47,9 +48,7 @@ const AssignmentDetails: FC<AssignmentDetailsProps> = ({ assignment }) => {
       <div className="flex flex-col p-3 m-5 space-y-10 text-gray-400 bg-white shadow-3xl ">
         <PageLayOut>
           {selectedAssignment && (
-            <AssignmentCard
-              assignmentsDetails={selectedAssignment}
-            ></AssignmentCard>
+            <AssignmentCard assignments={selectedAssignment}></AssignmentCard>
           )}
         </PageLayOut>
 

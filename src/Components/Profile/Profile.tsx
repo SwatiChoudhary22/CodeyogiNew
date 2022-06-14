@@ -7,7 +7,7 @@ import * as Yup from "yup";
 import PageLayout from "../PageLayout";
 import H1 from "../H1";
 type ProfileProps = {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: () => void;
 };
 
 const initialValues = {

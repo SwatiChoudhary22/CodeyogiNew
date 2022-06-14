@@ -5,13 +5,13 @@ import moment from "moment";
 import H3 from "../H3";
 import H4 from "../H4";
 type AssignmentCardProps = {
-  assignmentsDetails: Assignment;
+  assignments: Assignment;
 };
 
-const AssignmentCard: FC<AssignmentCardProps> = ({ assignmentsDetails }) => {
+const AssignmentCard: FC<AssignmentCardProps> = ({ assignments }) => {
   return (
     <div className="w-full p-1 md:space-y-4">
-      <H3>AssignmentsDetails #{assignmentsDetails.id}</H3>
+      <H3>AssignmentsDetails #{assignments.id}</H3>
       <hr></hr>
       <div className="grid grid-cols-2 md:grid-cols-5">
         <H4>Title</H4>
@@ -19,7 +19,7 @@ const AssignmentCard: FC<AssignmentCardProps> = ({ assignmentsDetails }) => {
           <span className="text-sm">
             <MDEditor.Markdown
               className="!bg-cyan-50"
-              source={assignmentsDetails.title}
+              source={assignments.title}
             />
           </span>
         </div>
@@ -29,7 +29,7 @@ const AssignmentCard: FC<AssignmentCardProps> = ({ assignmentsDetails }) => {
         <H4>Due Date</H4>
         <div className="row-col-3">
           <span className="text-sm">
-            {moment(assignmentsDetails.due_date).format("MMMM Do YYYY")}
+            {moment(assignments.due_date).format("MMMM Do YYYY")}
           </span>
         </div>
       </div>
@@ -40,7 +40,7 @@ const AssignmentCard: FC<AssignmentCardProps> = ({ assignmentsDetails }) => {
           <span className="text-sm">
             <MDEditor.Markdown
               className="!bg-cyan-50"
-              source={assignmentsDetails.description}
+              source={assignments.description}
             />
           </span>
         </div>

@@ -15,13 +15,13 @@ const Template: ComponentStory<typeof Button> = (args: any) => (
   <Button {...args}>Button1</Button>
 );
 
-export const Primary = Template.bind({
+export const Primary = Template.bind({});
+
+Primary.args = {
   theme: "primary",
-});
+};
 
-Primary.args = {};
-
-export const Secondary = Template.bind({
+export const Secondary = Template.bind({});
+Secondary.args = {
   theme: "secondary",
-});
-Secondary.args = {};
+};

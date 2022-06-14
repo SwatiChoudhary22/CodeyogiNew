@@ -5,17 +5,17 @@ import H2 from "../H2";
 import PageLayout from "../PageLayout";
 import { Assignment } from "../../Modals/Assignment";
 type AssignmentsProps = {
-  assignment: Assignment;
+  assignment?: Assignment;
 };
 
-const Assignments: FC<AssignmentsProps> = ({ assignment }) => {
+const Assignments: FC<AssignmentsProps> = () => {
   const [assignments, setAssignments] = useState<Assignment[]>([]);
 
   useEffect(() => {
     const promise = getAssignments();
-    promise.then((response) => {
-      setAssignments(response.data);
-      localStorage.setItem("assignments", JSON.stringify(response.data));
+    promise.then((data) => {
+      setAssignments(data);
+      localStorage.setItem("assignments", JSON.stringify(data));
     });
   }, []);
   return (
