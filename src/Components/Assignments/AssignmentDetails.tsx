@@ -11,8 +11,10 @@ type AssignmentDetailsProps = {
   assignment?: Assignment;
 };
 
-const AssignmentDetails: FC<AssignmentDetailsProps> = () => {
-  const data = useParams();
+const AssignmentDetails: FC<AssignmentDetailsProps> = ({}) => {
+  const data: { id: string } = useParams() as any;
+  console.log(data);
+
   const [assignmentsDetails, setAssignmentsDetails] = React.useState<
     Assignment[]
   >([]);
