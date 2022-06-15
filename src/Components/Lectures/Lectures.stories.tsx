@@ -13,4 +13,3 @@ const Template: ComponentStory<typeof Lectures> = (args) => (
 
 export const VariantName = Template.bind({});
 VariantName.args = {};
-export {};

@@ -10,16 +10,17 @@ import profile from "../../Images/profile.png";
 import Login from "../Login";
 type SidebarProps = {
   onClick: () => void;
-  smallScreenToggleClass: string;
+  smallScreenToggleClass: any;
 };
 
-const Sidebar: FC<SidebarProps> = ({ onClick }) => {
+const Sidebar: FC<SidebarProps> = ({ onClick, smallScreenToggleClass }) => {
   return (
-    <div className="sticky top-0 flex flex-col w-56 h-screen p-5 space-y-10 text-white bg-cyan-900">
-      \
+    <div
+      className={`sticky top-0 flex flex-col w-56 h-screen p-5 space-y-10 text-white bg-cyan-900  ${smallScreenToggleClass}`}
+    >
       <button
         onClick={onClick}
-        className="absolute text-4xl top-2 left-56 md:hidden "
+        className="absolute text-4xl text-black top-2 left-56 md:hidden"
       >
         X
       </button>
