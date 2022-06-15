@@ -6,7 +6,7 @@ type MainPageLayoutProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-const MainPageLayout: FC<MainPageLayoutProps> = ({ onClick }) => {
+const MainPageLayout: FC<MainPageLayoutProps> = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const handleSideBarToggle = () => {
     setIsSideBarOpen(true);

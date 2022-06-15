@@ -13,9 +13,16 @@ type SidebarProps = {
   smallScreenToggleClass: string;
 };
 
-const Sidebar: FC<SidebarProps> = () => {
+const Sidebar: FC<SidebarProps> = ({ onClick }) => {
   return (
     <div className="sticky top-0 flex flex-col w-56 h-screen p-5 space-y-10 text-white bg-cyan-900">
+      \
+      <button
+        onClick={onClick}
+        className="absolute text-4xl top-2 left-56 md:hidden "
+      >
+        X
+      </button>
       <Link to="/lectures">
         <div className="flex items-center space-x-3 text-2xl text-white">
           <Icons imageUrl="https://codeyogi.io/images/favicon-96.png"></Icons>
