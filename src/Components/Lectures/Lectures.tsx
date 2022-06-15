@@ -19,7 +19,7 @@ const Lectures: FC<LecturesProps> = (props) => {
   }, []);
 
   return (
-    <div className="flex-1 h-screen p-3 bg-cyan-100">
+    <div className="flex-1 h-full p-3 bg-cyan-50">
       <div className="flex justify-end p-3"></div>
       <div className="flex flex-col items-center justify-center px-3 pt-5 md:px-16 md:pt-10">
         <div className="flex justify-start text-cyan-900">
