@@ -9,7 +9,6 @@ import { Assignment } from "../../Modals/Assignment";
 import { getAssignments } from "../../Api";
 type AssignmentDetailsProps = {
   assignment?: Assignment;
-  id: number;
 };
 
 const AssignmentDetails: FC<AssignmentDetailsProps> = () => {
@@ -35,7 +34,7 @@ const AssignmentDetails: FC<AssignmentDetailsProps> = () => {
   }, []);
 
   const selectedAssignment = assignmentsDetails.find((assignment) => {
-    return assignment.id === +data;
+    return assignment.id === +data.id;
   });
 
   return (
@@ -50,19 +49,12 @@ const AssignmentDetails: FC<AssignmentDetailsProps> = () => {
           {selectedAssignment && (
             <AssignmentCard assignments={selectedAssignment}></AssignmentCard>
           )}
+
+          {reSubmit && <Submit onClick={onClose}> </Submit>}
+          <hr className="pb-4"></hr>
+
+          <Button onClick={ButtonClickhandler}>Submit</Button>
         </PageLayOut>
-
-        {reSubmit && <Submit onClick={onClose}> </Submit>}
-
-        <div className="flex space-x-5">
-          <Button onClick={ButtonClickhandler}>Re-submit</Button>
-          <div className="flex items-center text-sm underline text-cyan-900 underline-offset-2">
-            <Icons imageUrl="https://icon-library.com/images/download-icon-white/download-icon-white-21.jpg"></Icons>
-            <Button>
-              <a href="https://play.tailwindcss.com/">See Your Submission</a>
-            </Button>
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -62,9 +62,9 @@ const Submit: FC<SubmitProps> = ({ assignment, onClick }) => {
 
   return (
     <div className="fixed top-0 left-0 flex items-center justify-center w-screen h-screen transition-opacity bg-opacity-75 bg-cyan-50 ">
-      <div className="relative flex flex-col w-1/2 h-56 p-4 space-y-8 bg-cyan-200 ">
+      <div className="relative flex flex-col w-1/2 p-4 space-y-8 bg-cyan-200 ">
         <hr className="w-full"></hr>
-        <div className="flex flex-col items-center justify-start w-full space-x-10 md:flex md:flex-row">
+        <div className="flex flex-col items-center justify-center w-full space-x-10 md:flex md:flex-row">
           <H3>Submission Link</H3>
 
           <Input
@@ -75,7 +75,7 @@ const Submit: FC<SubmitProps> = ({ assignment, onClick }) => {
           ></Input>
         </div>
         <hr className="w-full"></hr>
-        <div className="flex flex-row justify-start pb-1 space-x-10">
+        <div className="flex flex-row justify-between ">
           <Button onClick={onSubmit} className={"text-sm py-2 px-3 "}>
             Submit
           </Button>

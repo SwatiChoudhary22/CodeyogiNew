@@ -15,14 +15,14 @@ type SidebarProps = {
 
 const Sidebar: FC<SidebarProps> = () => {
   return (
-    <div className="sticky top-0 flex flex-col w-56 h-screen p-5 text-white bg-cyan-900 ">
+    <div className="sticky top-0 flex flex-col w-56 h-screen p-5 space-y-10 text-white bg-cyan-900">
       <Link to="/lectures">
-        <div className="flex items-center pl-2 space-x-3 text-2xl text-white">
+        <div className="flex items-center space-x-3 text-2xl text-white">
           <Icons imageUrl="https://codeyogi.io/images/favicon-96.png"></Icons>
           <span>CODEYOGI</span>
         </div>
       </Link>
-      <div className="flex flex-col justify-between mt-10 space-y-3 text-lg items">
+      <div className="flex flex-col justify-end space-y-3 text-lg">
         <div>
           <Link to="/lectures">
             <div className="flex mb-4 space-x-3">
@@ -44,6 +44,7 @@ const Sidebar: FC<SidebarProps> = () => {
             </div>
           </Link>
         </div>
+
         <div>
           <Link to="/login">
             <div className="flex mb-4 space-x-3">

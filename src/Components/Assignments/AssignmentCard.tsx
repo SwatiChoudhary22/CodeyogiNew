@@ -16,11 +16,8 @@ const AssignmentCard: FC<AssignmentCardProps> = ({ assignments }) => {
       <div className="grid grid-cols-2 md:grid-cols-5">
         <H4>Title</H4>
         <div className="row-col-3">
-          <span className="text-sm">
-            <MDEditor.Markdown
-              className="!bg-cyan-50"
-              source={assignments.title}
-            />
+          <span className="text-sm text-white">
+            <MDEditor.Markdown className="" source={assignments.title} />
           </span>
         </div>
       </div>
@@ -28,7 +25,7 @@ const AssignmentCard: FC<AssignmentCardProps> = ({ assignments }) => {
       <div className="grid grid-cols-2 md:grid-cols-5">
         <H4>Due Date</H4>
         <div className="row-col-3">
-          <span className="text-sm">
+          <span className="text-sm text-white">
             {moment(assignments.due_date).format("MMMM Do YYYY")}
           </span>
         </div>
@@ -37,11 +34,8 @@ const AssignmentCard: FC<AssignmentCardProps> = ({ assignments }) => {
       <div className="grid grid-cols-2 md:grid-cols-5">
         <H4>Description</H4>
         <div className="row-col-3">
-          <span className="text-sm">
-            <MDEditor.Markdown
-              className="!bg-cyan-50"
-              source={assignments.description}
-            />
+          <span className="text-sm text-white">
+            <MDEditor.Markdown source={assignments.description} />
           </span>
         </div>
       </div>
